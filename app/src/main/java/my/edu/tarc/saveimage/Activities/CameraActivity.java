@@ -143,6 +143,13 @@ public class CameraActivity extends AppCompatActivity {
             byte[] imageBytes = baos.toByteArray();
             imageString = Base64.encodeToString(imageBytes, Base64.DEFAULT);
 
+
+            //TODO: Store in storage
+            //Reference in Google Keep
+            //The app currently only upload thumbnail to the server
+            //Change strings in string file to our own server url
+            //Set up database, use longblob for image, auto-increment int for imageid
+
         }
     }
 
@@ -173,7 +180,7 @@ public class CameraActivity extends AppCompatActivity {
                 postDataParams = new HashMap<String, String>();
                 postDataParams.put("image", imageString);
                 service = new HTTPURLConnection();
-                response = service.ServerData(getString(R.string.url_insert_image), postDataParams);
+                response = service.ServerData(getString(R.string.url_insert_image), postDataParams); //find in classroom drive
 
             } catch (Exception e) {
                 e.printStackTrace();
